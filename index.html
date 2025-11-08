@@ -11,7 +11,7 @@
   <style>
     /* ===== Brand system (edit here) ===== */
     :root{
-      /* Fogle Home Automation brand colors */
+      /* Fogle Home Automation brand colors — replace hexes if your brand sheet updates */
       --primary:#08B2FF;   /* Electric blue */
       --secondary:#7CFFCB; /* Mint */
       --bg:#0B0F1A;        /* Night navy */
@@ -19,6 +19,7 @@
       --text:#E8EEF9;      /* Near white */
       --muted:#B7C3D9;     /* Muted text */
       --stroke:#1E2A46;    /* Borders */
+      --banner:#061022;    /* Banner background */
       --shadow:0 10px 30px rgba(0,0,0,.35);
       --radius:18px;
     }
@@ -31,15 +32,22 @@
       font:16px/1.6 'Inter',system-ui,Segoe UI,Roboto,Arial}
     .wrap{max-width:1100px;margin:0 auto;padding:24px}
 
-    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    /* COMING SOON banner */
+    .banner{width:100%;background:linear-gradient(135deg,var(--banner),#0A1530);border-bottom:1px solid var(--stroke);position:sticky;top:0;z-index:50}
+    .banner-inner{max-width:1100px;margin:0 auto;padding:8px 24px;display:flex;align-items:center;gap:10px;justify-content:center}
+    .badge{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#00131F;font-weight:800;border-radius:999px;padding:4px 10px;box-shadow:var(--shadow)}
+
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:8px}
     .brand{display:flex;align-items:center;gap:12px}
-    .logo{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,var(--primary),var(--secondary));box-shadow:var(--shadow)}
+    .logo{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,var(--primary),var(--secondary));box-shadow:var(--shadow);overflow:hidden}
+    .logo img{display:block;width:100%;height:100%;object-fit:cover}
     .logo svg{width:28px;height:28px;filter:drop-shadow(0 2px 6px rgba(0,0,0,.25))}
     .title{font-weight:800;letter-spacing:.2px}
+    .tagline{font-size:13px;color:var(--muted)}
     nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-weight:600}
     nav a:hover{color:var(--text)}
 
-    .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:center;padding:56px 0}
+    .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:center;padding:40px 0}
     .hero h1{font-size:clamp(28px,5.2vw,48px);line-height:1.1;margin:0 0 14px}
     .hero p{color:var(--muted);margin:0 0 22px}
     .cta{display:flex;gap:12px;flex-wrap:wrap}
@@ -95,11 +103,17 @@
   <meta property="og:url" content="https://foglehomeautomation.com" />
 </head>
 <body>
+  <!-- Banner -->
+  <div class="banner" role="status" aria-live="polite">
+    <div class="banner-inner"><span class="badge">COMING SOON</span> <span style="color:var(--muted)">Launching soon in the Lowcountry — accepting inquiries & estimates now.</span></div>
+  </div>
+
   <div class="wrap">
     <header>
       <div class="brand">
         <div class="logo" aria-hidden="true">
-          <!-- Inline SVG monogram logo (replace later with your final SVG if desired) -->
+          <!-- If hosting image files, replace with: <img src="/FHA_light_on_dark.png" alt="Fogle Home Automation logo" /> -->
+          <!-- Inline fallback monogram -->
           <svg viewBox="0 0 24 24" role="img" aria-label="Fogle Home Automation logo">
             <path fill="#00131F" d="M4 5h16v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5z" opacity=".15"/>
             <path fill="#00131F" d="M6.5 6.5h11a1 1 0 0 1 0 2h-9v3h6a1 1 0 1 1 0 2h-6v4a1 1 0 1 1-2 0v-10a1 1 0 0 1 1-1z"/>
@@ -107,7 +121,7 @@
         </div>
         <div>
           <div class="title">Fogle Home Automation</div>
-          <div style="font-size:13px;color:var(--muted)">Smart home & small‑office automation • Charleston, SC</div>
+          <div class="tagline">Seamless systems, smarter living</div>
         </div>
       </div>
       <nav>
@@ -180,7 +194,7 @@
       <div class="grid-2">
         <div>
           <h2>About</h2>
-          <p>Fogle Home Automation is run by a senior controls engineer who builds reliable industrial systems by day and brings that same rigor to your home or office. We document everything, so you’re never locked out of your own setup.</p>
+          <p>Fogle Home Automation is led by a senior controls engineer who brings industrial‑grade reliability to homes and small offices across the Lowcountry. You’ll get tidy installs, clear handover documentation, and administrator access from day one.</p>
         </div>
         <div class="card">
           <h3 style="margin-top:0">Service Area</h3>
@@ -191,34 +205,23 @@
 
     <section id="contact" class="section">
       <h2>Contact</h2>
-      <div class="grid-2">
-        <form id="leadForm" action="mailto:cam@foglehomeautomation.com" method="post">
-          <label for="name">Name</label>
-          <input id="name" name="name" required>
+      <form id="leadForm" action="mailto:cam@foglehomeautomation.com" method="post">
+        <label for="name">Name</label>
+        <input id="name" name="name" required>
 
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" required>
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required>
 
-          <label for="phone">Phone</label>
-          <input id="phone" name="phone" inputmode="tel" placeholder="(###) ###‑####">
+        <label for="phone">Phone</label>
+        <input id="phone" name="phone" inputmode="tel" placeholder="(###) ###‑####">
 
-          <label for="interest">What can we help with?</label>
-          <textarea id="interest" name="interest" placeholder="Briefly describe your project"></textarea>
+        <label for="interest">What can we help with?</label>
+        <textarea id="interest" name="interest" placeholder="Briefly describe your project"></textarea>
 
-          <button class="btn" type="submit">Send</button>
-          <div class="fine">Prefer email? <a href="mailto:cam@foglehomeautomation.com">cam@foglehomeautomation.com</a></div>
-          <div class="fine">Note: We’ll add a proper form handler (SharePoint/Power Automate or Netlify) once you pick hosting.</div>
-        </form>
-        <div class="card">
-          <h3 style="margin-top:0">Next steps</h3>
-          <ol>
-            <li>Pick a hosting option (GitHub Pages, Netlify, or Vercel).</li>
-            <li>Upload this <code>index.html</code>.</li>
-            <li>Point <code>www.foglehomeautomation.com</code> to your host, then forward the root domain to <code>www</code>.</li>
-          </ol>
-          <p class="fine">We’ll add SSL, analytics, and a scheduling link in v2.</p>
-        </div>
-      </div>
+        <button class="btn" type="submit">Send</button>
+        <div class="fine">Prefer email? <a href="mailto:cam@foglehomeautomation.com">cam@foglehomeautomation.com</a></div>
+        <div class="fine">We’ll attach a proper form handler (SharePoint/Power Automate, Netlify, or Formspree) once hosting is final.</div>
+      </form>
     </section>
 
     <footer>
