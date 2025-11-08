@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fogle Home Automation — Smart Home & Small‑Office Automation in Charleston, SC</title>
+  <meta name="description" content="Smart, secure, and reliable home & small‑office automation in the Charleston area. Networking, lighting, climate, access control, cameras, and AV — designed and installed by a controls engineer." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    /* ===== Brand system (edit here) ===== */
+    :root{
+      /* Fogle Home Automation brand colors */
+      --primary:#08B2FF;   /* Electric blue */
+      --secondary:#7CFFCB; /* Mint */
+      --bg:#0B0F1A;        /* Night navy */
+      --bg-2:#10172A;      /* Card background */
+      --text:#E8EEF9;      /* Near white */
+      --muted:#B7C3D9;     /* Muted text */
+      --stroke:#1E2A46;    /* Borders */
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+      --radius:18px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;background:
+      radial-gradient(80% 80% at 70% 10%, #15203A 0%, var(--bg) 55%);
+      color:var(--text);
+      font:16px/1.6 'Inter',system-ui,Segoe UI,Roboto,Arial}
+    .wrap{max-width:1100px;margin:0 auto;padding:24px}
+
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,var(--primary),var(--secondary));box-shadow:var(--shadow)}
+    .logo svg{width:28px;height:28px;filter:drop-shadow(0 2px 6px rgba(0,0,0,.25))}
+    .title{font-weight:800;letter-spacing:.2px}
+    nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-weight:600}
+    nav a:hover{color:var(--text)}
+
+    .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:center;padding:56px 0}
+    .hero h1{font-size:clamp(28px,5.2vw,48px);line-height:1.1;margin:0 0 14px}
+    .hero p{color:var(--muted);margin:0 0 22px}
+    .cta{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{background:linear-gradient(135deg,var(--primary),#73E0FF);color:#00131F;padding:12px 18px;border-radius:12px;text-decoration:none;font-weight:800;box-shadow:var(--shadow)}
+    .btn.ghost{background:transparent;color:var(--text);border:1px solid var(--stroke)}
+
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:18px 0 42px}
+    .card{background:linear-gradient(180deg,var(--bg-2),#0E1627);border:1px solid var(--stroke);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+    .card h3{margin:0 0 8px}
+    .card p{margin:0;color:var(--muted)}
+
+    .trust{display:flex;flex-wrap:wrap;gap:10px;color:var(--muted);align-items:center}
+    .dot{width:6px;height:6px;border-radius:50%;background:var(--primary)}
+
+    .section{padding:36px 0}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+
+    form{display:grid;gap:12px;background:linear-gradient(180deg,var(--bg-2),#0E1627);padding:18px;border-radius:var(--radius);border:1px solid var(--stroke);box-shadow:var(--shadow)}
+    label{font-weight:600}
+    input,textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid #223055;background:#0A1322;color:var(--text)}
+    textarea{min-height:120px}
+    .fine{color:var(--muted);font-size:13px}
+
+    footer{border-top:1px solid var(--stroke);color:var(--muted);padding:24px 0;margin-top:36px}
+    a{color:var(--primary)}
+
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .cards{grid-template-columns:1fr}
+      .grid-2{grid-template-columns:1fr}
+      nav{display:none}
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Fogle Home Automation",
+    "url": "https://foglehomeautomation.com",
+    "telephone": "",
+    "areaServed": "Charleston, SC",
+    "image": "",
+    "address": {"@type":"PostalAddress","addressLocality":"Charleston","addressRegion":"SC","addressCountry":"US"},
+    "geo": {"@type":"GeoCoordinates","latitude":"32.7765","longitude":"-79.9311"},
+    "priceRange":"$$",
+    "sameAs": []
+  }
+  </script>
+  <!-- Social preview -->
+  <meta property="og:title" content="Fogle Home Automation" />
+  <meta property="og:description" content="Smart, secure, and reliable home & small‑office automation for the Lowcountry." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://foglehomeautomation.com" />
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true">
+          <!-- Inline SVG monogram logo (replace later with your final SVG if desired) -->
+          <svg viewBox="0 0 24 24" role="img" aria-label="Fogle Home Automation logo">
+            <path fill="#00131F" d="M4 5h16v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5z" opacity=".15"/>
+            <path fill="#00131F" d="M6.5 6.5h11a1 1 0 0 1 0 2h-9v3h6a1 1 0 1 1 0 2h-6v4a1 1 0 1 1-2 0v-10a1 1 0 0 1 1-1z"/>
+          </svg>
+        </div>
+        <div>
+          <div class="title">Fogle Home Automation</div>
+          <div style="font-size:13px;color:var(--muted)">Smart home & small‑office automation • Charleston, SC</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div>
+        <h1>Smart, secure, and reliable automation—without vendor lock‑in.</h1>
+        <p>Networking, lighting, climate, access, cameras, and AV—planned and installed with controls‑engineering discipline. Start simple, scale later.</p>
+        <div class="cta">
+          <a class="btn" href="#contact">Get a quote</a>
+          <a class="btn ghost" href="mailto:cam@foglehomeautomation.com">Email Cam</a>
+        </div>
+        <div class="trust" style="margin-top:18px">
+          <span class="dot"></span> <span>Locally owned in Charleston</span>
+          <span class="dot"></span> <span>Documentation you actually own</span>
+          <span class="dot"></span> <span>Privacy‑first configurations</span>
+        </div>
+      </div>
+      <div>
+        <div class="card" style="height:100%">
+          <h3 style="margin-top:0">Popular bundles</h3>
+          <ul>
+            <li><strong>Wi‑Fi Refresh:</strong> Proper router, APs, and wiring for whole‑home coverage.</li>
+            <li><strong>Lighting Scenes:</strong> Room and whole‑home scenes with wall keypads.</li>
+            <li><strong>Secure Entry:</strong> Smart locks, doorbell cam, and access schedules.</li>
+            <li><strong>Small‑Office AV:</strong> Teams/Zoom‑ready conference room kit.</li>
+          </ul>
+          <p class="fine">Ask about maintenance plans and remote monitoring.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section">
+      <h2 style="margin:0 0 8px">Services</h2>
+      <p class="fine">We favor secure, standards‑based gear with clean programming and neat installs.</p>
+      <div class="cards">
+        <div class="card">
+          <h3>Networking</h3>
+          <p>Whole‑home Wi‑Fi, low‑voltage wiring, rack clean‑ups, VLANs, and monitoring.</p>
+        </div>
+        <div class="card">
+          <h3>Lighting & Climate</h3>
+          <p>Scenes, occupancy sensors, daylighting, and schedules that save energy.</p>
+        </div>
+        <div class="card">
+          <h3>Access & Cameras</h3>
+          <p>Smart locks, doorbells, NVRs, privacy‑minded retention, and secure remote access.</p>
+        </div>
+        <div class="card">
+          <h3>Voice & Integrations</h3>
+          <p>Alexa/Google/HomeKit, dashboard tablets, and open‑standard bridges.</p>
+        </div>
+        <div class="card">
+          <h3>Small‑Office AV</h3>
+          <p>Conference room audio/video with neat cable management and presets.</p>
+        </div>
+        <div class="card">
+          <h3>Support Plans</h3>
+          <p>Proactive updates, remote help, and annual on‑site tune‑ups.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="grid-2">
+        <div>
+          <h2>About</h2>
+          <p>Fogle Home Automation is run by a senior controls engineer who builds reliable industrial systems by day and brings that same rigor to your home or office. We document everything, so you’re never locked out of your own setup.</p>
+        </div>
+        <div class="card">
+          <h3 style="margin-top:0">Service Area</h3>
+          <p>Charleston • Mount Pleasant • North Charleston • Summerville • Goose Creek • Daniel Island • Johns & James Islands</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <div class="grid-2">
+        <form id="leadForm" action="mailto:cam@foglehomeautomation.com" method="post">
+          <label for="name">Name</label>
+          <input id="name" name="name" required>
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required>
+
+          <label for="phone">Phone</label>
+          <input id="phone" name="phone" inputmode="tel" placeholder="(###) ###‑####">
+
+          <label for="interest">What can we help with?</label>
+          <textarea id="interest" name="interest" placeholder="Briefly describe your project"></textarea>
+
+          <button class="btn" type="submit">Send</button>
+          <div class="fine">Prefer email? <a href="mailto:cam@foglehomeautomation.com">cam@foglehomeautomation.com</a></div>
+          <div class="fine">Note: We’ll add a proper form handler (SharePoint/Power Automate or Netlify) once you pick hosting.</div>
+        </form>
+        <div class="card">
+          <h3 style="margin-top:0">Next steps</h3>
+          <ol>
+            <li>Pick a hosting option (GitHub Pages, Netlify, or Vercel).</li>
+            <li>Upload this <code>index.html</code>.</li>
+            <li>Point <code>www.foglehomeautomation.com</code> to your host, then forward the root domain to <code>www</code>.</li>
+          </ol>
+          <p class="fine">We’ll add SSL, analytics, and a scheduling link in v2.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>© <span id="y"></span> Fogle Home Automation • Charleston, SC</div>
+    </footer>
+  </div>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
